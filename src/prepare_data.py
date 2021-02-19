@@ -23,8 +23,8 @@ def prepare_data(data_dir: Path = Path("auto-insurance-fall-2017")) -> None:
     target = train_df["TARGET_FLAG"]
     target_amt = train_df["TARGET_AMT"]
 
-    train_df = train_df.drop(["TARGET_FLAG", "TARGET_AMT", "INDEX"], axis=1)
-    test_df = test_df.drop(["TARGET_FLAG", "TARGET_AMT", "INDEX"], axis=1)
+    train_df = train_df.drop(["TARGET_FLAG", "TARGET_AMT"], axis=1)
+    test_df = test_df.drop(["TARGET_FLAG", "TARGET_AMT"], axis=1)
 
     train_df["is_train"] = 1
     test_df["is_train"] = 0

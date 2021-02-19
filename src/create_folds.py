@@ -5,7 +5,7 @@ import joblib
 
 
 def create_folds(df: pd.DataFrame, y: np.array, n_splits: int = 5) -> pd.DataFrame:
-    skf = StratifiedKFold(n_splits=n_splits)
+    skf = StratifiedKFold(n_splits=n_splits, shuffle=False)
     df["kfold"] = -1
 
     for k, (train_index, test_index) in enumerate(skf.split(df.values, y)):
@@ -23,6 +23,9 @@ if __name__ == "__main__":
     test_idxs = df["is_train"] == 0
 
     train = df.loc[train_idxs, :]
+    train.loc[:, 'target'] = target
+    train = train.sample(frac=1.0).reset_index(drop=True)
+
     test = df.loc[test_idxs, :]
     train = train.drop(["is_train"], axis=1)
     test = test.drop(["is_train"], axis=1)
