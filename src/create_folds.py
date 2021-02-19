@@ -23,7 +23,7 @@ if __name__ == "__main__":
     test_idxs = df["is_train"] == 0
 
     train = df.loc[train_idxs, :]
-    train.loc[:, 'target'] = target
+    train.loc[:, "target"] = target
     train = train.sample(frac=1.0).reset_index(drop=True)
 
     test = df.loc[test_idxs, :]
