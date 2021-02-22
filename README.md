@@ -30,3 +30,4 @@ A 5-fold stratified validation was used to split the data.
 - Better hyperparameters tuning (e.g. using Optuna).
 - Creating more features.
 - Using feature importance for feature selection (NOTE: This works best with L1 regularization).
+- Creating another model for predicting target amount and then using it as an additional feature.
