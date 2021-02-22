@@ -3,11 +3,11 @@
 # Data
 The data is assumed to be in the directory ```auto-insurance-fall-2017```
 
-# Creating docker container
+# Creating docker container and training the model
 In order, to make sure that the code will work on different machines, I've trained
 the model in a docker container.
 
-To create the container, first run ```create_container.sh```. Then, to train the model and make predictions run ```docker_train.sh```
+To create the container, first run ```create_container.sh``` (Please note, that you have to be in the main directory to do that). Then, to train the model and make predictions run ```docker_train.sh```. The code also returns the OOF ROC_AUC score of the model.
 
 # Description of the directories
 ```models``` - directory with the trained models
@@ -25,3 +25,8 @@ The model used is a simple ensemble of XGboost.
 
 # Validation strategy
 A 5-fold stratified validation was used to split the data.
+
+# What else can be improved
+- Better hyperparameters tuning (e.g. using Optuna).
+- Creating more features.
+- Using feature importance for feature selection (NOTE: This works best with L1 regularization).
