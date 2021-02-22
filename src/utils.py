@@ -3,6 +3,9 @@ from typing import List
 
 
 def change_money(df: pd.DataFrame, cols: List[str]) -> pd.DataFrame:
+    """
+    Function for changing money format from $xyz,xyz to xyzxyz.
+    """
     assert isinstance(df, pd.DataFrame)
     assert isinstance(cols, list)
 

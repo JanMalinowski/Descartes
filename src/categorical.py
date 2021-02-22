@@ -6,6 +6,10 @@ from typing import List
 
 
 class Encoder:
+    """
+    A simple wrapper for label encoder for encoding multiple columns.
+    """
+
     def __init__(self, cols: List[str]) -> None:
         self.cols = cols
         self.encoders = {}

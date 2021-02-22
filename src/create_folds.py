@@ -5,6 +5,9 @@ import joblib
 
 
 def create_folds(df: pd.DataFrame, y: np.array, n_splits: int = 5) -> pd.DataFrame:
+    """
+    Function for creating stratified k fold validation.
+    """
     skf = StratifiedKFold(n_splits=n_splits, shuffle=False)
     df["kfold"] = -1
 

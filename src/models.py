@@ -8,6 +8,10 @@ from sklearn.metrics import roc_auc_score
 
 
 class XGBEnsemble:
+    """
+    A simple class for XGBoost ensemble.
+    """
+
     def __init__(self):
         self.models = []
 

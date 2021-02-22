@@ -6,6 +6,14 @@ import joblib
 
 
 def prepare_data(data_dir: Path = Path("auto-insurance-fall-2017")) -> None:
+    """
+    This function wraps-up the data preprocessing process from the jupyter notebook.
+    Returns:
+    - target.pkl - target flag for the train set
+    - target_amt.pkl - target amount for the train set
+    - df_all.pkl - preprocessed dataframe with train and test data. They can be differentiated
+      by looking at the is_train column.
+    """
     train_df = pd.read_csv(data_dir / "train_auto.csv")
     test_df = pd.read_csv(data_dir / "test_auto.csv")
 
