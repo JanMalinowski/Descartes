@@ -6,13 +6,12 @@ import joblib
 if __name__ == "__main__":
     data = joblib.load("auto-insurance-fall-2017/train_folds.pkl")
     params = {
-        "subsample": 0.8,
-        "n_estimators": 400,
-        "min_child_weight": 10,
-        "max_depth": 4,
+        "subsample": 0.95,
+        "n_estimators": 150,
+        "min_child_weight": 20,
+        "max_depth": 15,
         "learning_rate": 0.05,
-        "gamma": 5,
-        "eta": 0.1,
+        "gamma": 3.0,
         "colsample_bytree": 0.6,
         "eval_metric": "auc",
         "objective": "binary:logistic",
